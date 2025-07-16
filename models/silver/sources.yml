@@ -1,0 +1,28 @@
+version: 2
+
+sources:
+  - name: bronze
+    database: HEALTHCARE_DB
+    schema: BRONZE
+    tables:
+      - name: fy_2024_snf_vbp_aggregate_performance
+      - name: fy_2024_snf_vbp_facility_performance
+      - name: nh_citation_descriptions
+      - name: nh_covid_vax_averages
+      - name: nh_covid_vax_provider
+      - name: nh_data_collection_intervals
+      - name: nh_fire_safety_citations
+      - name: nh_health_citations
+      - name: nh_health_inspec_cutpoints_state
+      - name: nh_ownership
+      - name: nh_penalties
+      - name: nh_provider_info
+      - name: nh_quality_msr_claims
+      - name: nh_quality_msr_mds
+      - name: nh_state_us_averages
+      - name: nh_survey_dates
+      - name: nh_survey_summary
+      - name: pbj_daily_nurse_staffing_main
+      - name: skilled_nursing_facility_quality_reporting_program_national_data
+      - name: skilled_nursing_facility_quality_reporting_program_provider_data
+      - name: swing_bed_snf_data
