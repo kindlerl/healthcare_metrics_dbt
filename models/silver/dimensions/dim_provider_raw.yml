@@ -1,0 +1,419 @@
+version: 2
+
+models:
+  - name: dim_provider_raw
+    description: Raw provider information, filtered for duplicates
+
+    columns:
+    
+      - name: provider_id
+        description: "CMS Certification Number (natural key).""
+        tests: [not_null]
+
+      - name: provider_name
+        description: 
+        tests: [not_null]
+
+      - name: provider_address
+        description: 
+        tests: [not_null]
+
+      - name: city_town
+        description: 
+        tests: [not_null]
+
+      - name: state
+        description: 
+        tests: [not_null]
+
+      - name: zip_code
+        description: 
+        tests: [not_null]
+
+      - name: telephone_number
+        description: 
+        tests: [not_null]
+
+      - name: provider_ssa_county_code
+        description: 
+        tests: [not_null]
+
+      - name: county_parish
+        description: 
+        tests: [not_null]
+
+      - name: ownership_type
+        description: 
+        tests: [not_null]
+
+      - name: number_of_certified_beds
+        description: 
+        tests: [not_null]
+
+      - name: average_number_of_residents_per_day
+        description: 
+        tests: [not_null]
+
+      - name: average_number_of_residents_per_day_footnote
+        description: 
+        tests: [not_null]
+
+      - name: provider_type
+        description: 
+        tests: [not_null]
+
+      - name: provider_resides_in_hospital
+        description: 
+        tests: [not_null]
+
+      - name: legal_business_name
+        description: 
+        tests: [not_null]
+
+      - name: date_first_approved_to_provide_medicare_and_medicaid_services
+        description: 
+        tests: [not_null]
+
+      - name: affiliated_entity_name
+        description: 
+        tests: [not_null]
+
+      - name: affiliated_entity_id
+        description: 
+        tests: [not_null]
+
+      - name: continuing_care_retirement_community
+        description: 
+        tests: [not_null]
+
+      - name: special_focus_status
+        description: 
+        tests: [not_null]
+
+      - name: abuse_icon
+        description: 
+        tests: [not_null]
+
+      - name: most_recent_health_inspection_more_than_2_years_ago
+        description: 
+        tests: [not_null]
+
+      - name: provider_changed_ownership_in_last_12_months
+        description: 
+        tests: [not_null]
+
+      - name: with_a_resident_and_family_council
+        description: 
+        tests: [not_null]
+
+      - name: automatic_sprinkler_systems_in_all_required_areas
+        description: 
+        tests: [not_null]
+
+      - name: overall_rating
+        description: 
+        tests: [not_null]
+
+      - name: overall_rating_footnote
+        description: 
+        tests: [not_null]
+
+      - name: health_inspection_rating
+        description: 
+        tests: [not_null]
+
+      - name: health_inspection_rating_footnote
+        description: 
+        tests: [not_null]
+
+      - name: qm_rating
+        description: 
+        tests: [not_null]
+
+      - name: qm_rating_footnote
+        description: 
+        tests: [not_null]
+
+      - name: long_stay_qm_rating
+        description: 
+        tests: [not_null]
+
+      - name: long_stay_qm_rating_footnote
+        description: 
+        tests: [not_null]
+
+      - name: short_stay_qm_rating
+        description: 
+        tests: [not_null]
+
+      - name: short_stay_qm_rating_footnote
+        description: 
+        tests: [not_null]
+
+      - name: staffing_rating
+        description: 
+        tests: [not_null]
+
+      - name: staffing_rating_footnote
+        description: 
+        tests: [not_null]
+
+      - name: reported_staffing_footnote
+        description: 
+        tests: [not_null]
+
+      - name: physical_therapist_staffing_footnote
+        description: 
+        tests: [not_null]
+
+      - name: reported_nurse_aide_staffing_hours_per_resident_per_day
+        description: 
+        tests: [not_null]
+
+      - name: reported_lpn_staffing_hours_per_resident_per_day
+        description: 
+        tests: [not_null]
+
+      - name: reported_rn_staffing_hours_per_resident_per_day
+        description: 
+        tests: [not_null]
+
+      - name: reported_licensed_staffing_hours_per_resident_per_day
+        description: 
+        tests: [not_null]
+
+      - name: reported_total_nurse_staffing_hours_per_resident_per_day
+        description: 
+        tests: [not_null]
+
+      - name: total_number_of_nurse_staff_hours_per_resident_per_day_on_the_weekend
+        description: 
+        tests: [not_null]
+
+      - name: registered_nurse_hours_per_resident_per_day_on_the_weekend
+        description: 
+        tests: [not_null]
+
+      - name: reported_physical_therapist_staffing_hours_per_resident_per_day
+        description: 
+        tests: [not_null]
+
+      - name: total_nursing_staff_turnover
+        description: 
+        tests: [not_null]
+
+      - name: total_nursing_staff_turnover_footnote
+        description: 
+        tests: [not_null]
+
+      - name: registered_nurse_turnover
+        description: 
+        tests: [not_null]
+
+      - name: registered_nurse_turnover_footnote
+        description: 
+        tests: [not_null]
+
+      - name: number_of_administrators_who_have_left_the_nursing_home
+        description: 
+        tests: [not_null]
+
+      - name: administrator_turnover_footnote
+        description: 
+        tests: [not_null]
+
+      - name: nursing_case_mix_index
+        description: 
+        tests: [not_null]
+
+      - name: nursing_case_mix_index_ratio
+        description: 
+        tests: [not_null]
+
+      - name: case_mix_nurse_aide_staffing_hours_per_resident_per_day
+        description: 
+        tests: [not_null]
+
+      - name: case_mix_lpn_staffing_hours_per_resident_per_day
+        description: 
+        tests: [not_null]
+
+      - name: case_mix_rn_staffing_hours_per_resident_per_day
+        description: 
+        tests: [not_null]
+
+      - name: case_mix_total_nurse_staffing_hours_per_resident_per_day
+        description: 
+        tests: [not_null]
+
+      - name: case_mix_weekend_total_nurse_staffing_hours_per_resident_per_day
+        description: 
+        tests: [not_null]
+
+      - name: adjusted_nurse_aide_staffing_hours_per_resident_per_day
+        description: 
+        tests: [not_null]
+
+      - name: adjusted_lpn_staffing_hours_per_resident_per_day
+        description: 
+        tests: [not_null]
+
+      - name: adjusted_rn_staffing_hours_per_resident_per_day
+        description: 
+        tests: [not_null]
+
+      - name: adjusted_total_nurse_staffing_hours_per_resident_per_day
+        description: 
+        tests: [not_null]
+
+      - name: adjusted_weekend_total_nurse_staffing_hours_per_resident_per_day
+        description: 
+        tests: [not_null]
+
+      - name: rating_cycle_1_standard_survey_health_date
+        description: 
+        tests: [not_null]
+
+      - name: rating_cycle_1_total_number_of_health_deficiencies
+        description: 
+        tests: [not_null]
+
+      - name: rating_cycle_1_number_of_standard_health_deficiencies
+        description: 
+        tests: [not_null]
+
+      - name: rating_cycle_1_number_of_complaint_health_deficiencies
+        description: 
+        tests: [not_null]
+
+      - name: rating_cycle_1_health_deficiency_score
+        description: 
+        tests: [not_null]
+
+      - name: rating_cycle_1_number_of_health_revisits
+        description: 
+        tests: [not_null]
+
+      - name: rating_cycle_1_health_revisit_score
+        description: 
+        tests: [not_null]
+
+      - name: rating_cycle_1_total_health_score
+        description: 
+        tests: [not_null]
+
+      - name: rating_cycle_2_standard_health_survey_date
+        description: 
+        tests: [not_null]
+
+      - name: rating_cycle_2_total_number_of_health_deficiencies
+        description: 
+        tests: [not_null]
+
+      - name: rating_cycle_2_number_of_standard_health_deficiencies
+        description: 
+        tests: [not_null]
+
+      - name: rating_cycle_2_number_of_complaint_health_deficiencies
+        description: 
+        tests: [not_null]
+
+      - name: rating_cycle_2_health_deficiency_score
+        description: 
+        tests: [not_null]
+
+      - name: rating_cycle_2_number_of_health_revisits
+        description: 
+        tests: [not_null]
+
+      - name: rating_cycle_2_health_revisit_score
+        description: 
+        tests: [not_null]
+
+      - name: rating_cycle_2_total_health_score
+        description: 
+        tests: [not_null]
+
+      - name: rating_cycle_3_standard_health_survey_date
+        description: 
+        tests: [not_null]
+
+      - name: rating_cycle_3_total_number_of_health_deficiencies
+        description: 
+        tests: [not_null]
+
+      - name: rating_cycle_3_number_of_standard_health_deficiencies
+        description: 
+        tests: [not_null]
+
+      - name: rating_cycle_3_number_of_complaint_health_deficiencies
+        description: 
+        tests: [not_null]
+
+      - name: rating_cycle_3_health_deficiency_score
+        description: 
+        tests: [not_null]
+
+      - name: rating_cycle_3_number_of_health_revisits
+        description: 
+        tests: [not_null]
+
+      - name: rating_cycle_3_health_revisit_score
+        description: 
+        tests: [not_null]
+
+      - name: rating_cycle_3_total_health_score
+        description: 
+        tests: [not_null]
+
+      - name: total_weighted_health_survey_score
+        description: 
+        tests: [not_null]
+
+      - name: number_of_facility_reported_incidents
+        description: 
+        tests: [not_null]
+
+      - name: number_of_substantiated_complaints
+        description: 
+        tests: [not_null]
+
+      - name: number_of_citations_from_infection_control_inspections
+        description: 
+        tests: [not_null]
+
+      - name: number_of_fines
+        description: 
+        tests: [not_null]
+
+      - name: total_amount_of_fines_in_dollars
+        description: 
+        tests: [not_null]
+
+      - name: number_of_payment_denials
+        description: 
+        tests: [not_null]
+
+      - name: total_number_of_penalties
+        description: 
+        tests: [not_null]
+
+      - name: location
+        description: 
+        tests: [not_null]
+
+      - name: latitude
+        description: 
+        tests: [not_null]
+
+      - name: longitude
+        description: 
+        tests: [not_null]
+
+      - name: geocoding_footnote
+        description: 
+        tests: [not_null]
+
+      - name: processing_date
+        description: 
+        tests: [not_null]
