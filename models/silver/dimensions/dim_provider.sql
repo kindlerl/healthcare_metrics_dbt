@@ -78,6 +78,7 @@ final AS (
 )
 -- Select all the retained rows.
 SELECT
+    {{ dbt_utils.surrogate_key(['provider_id']) }} as provider_sk,
     *
 FROM
     final;

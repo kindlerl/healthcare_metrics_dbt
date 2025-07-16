@@ -55,6 +55,8 @@ final AS (
         staffing_rating_footnote
     FROM
         deduplicated
+    WHERE
+        rn = 1
 )
 SELECT
     *

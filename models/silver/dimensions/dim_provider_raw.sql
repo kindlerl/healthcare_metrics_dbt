@@ -233,7 +233,7 @@ final AS (
         latitude,
         longitude,
         geocoding_footnote,
-        processing_date,
+        processing_date
     FROM
         deduplicated
     WHERE
