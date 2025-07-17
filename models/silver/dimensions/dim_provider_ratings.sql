@@ -41,18 +41,19 @@ deduplicated AS (
 final AS (
     SELECT
         provider_id,
-        overall_rating,
+        CAST(overall_rating AS int) AS overall_rating,
         overall_rating_footnote,
-        health_inspection_rating,
+        CAST(health_inspection_rating AS int) AS health_inspection_rating,
         health_inspection_rating_footnote,
-        qm_rating,
+        CAST(qm_rating AS int) AS qm_rating,
         qm_rating_footnote,
-        long_stay_qm_rating,
+        CAST(long_stay_qm_rating AS int) AS long_stay_qm_rating,
         long_stay_qm_rating_footnote,
-        short_stay_qm_rating,
+        CAST(short_stay_qm_rating AS int) AS short_stay_qm_rating,
         short_stay_qm_rating_footnote,
-        staffing_rating,
+        CAST(staffing_rating AS int) AS staffing_rating,
         staffing_rating_footnote
+
     FROM
         deduplicated
     WHERE
@@ -61,4 +62,4 @@ final AS (
 SELECT
     *
 FROM
-    final;
+    final

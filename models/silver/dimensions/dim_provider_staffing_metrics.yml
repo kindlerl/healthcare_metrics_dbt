@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: dim_provider_staffing_metrics
+    description: "Refined provider dimension showing staffing hours per resident, per day."
+
+    columns:
+
+      - name: provider_sk
+        description: "Surrogate key for joining fact tables."
+        tests: [not_null unique]
+      
+      - name: reported_nurse_aide_staffing_hours_per_resident_per_day
+        description: "Nurse aide staffing hours per resident, per day"
+
+      - name: reported_lpn_staffing_hours_per_resident_per_day
+        description: "LPN staffing hours per resident, per day"
+
+      - name: reported_rn_staffing_hours_per_resident_per_day
+        description: "RN staffing hours per resident, per day"
+
+      - name: reported_licensed_staffing_hours_per_resident_per_day
+        description: "Licensed staffing hours per resident, per day"
+
+      - name: reported_total_nurse_staffing_hours_per_resident_per_day
+        description: "Total nurse staffing hours per resident, per day"

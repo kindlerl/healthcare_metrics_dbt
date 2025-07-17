@@ -1,6 +1,3 @@
-{% macro concat_macro(v1, v2) %}
-    concat( '{{v1}}', '-', '{{v2}}' )
-{% endmacro %}(base) iMac:macros richardkindle$ cat copy_into_snowflake.sql 
 {% macro copy_json(table_nm) %}
  
     --Delete the data from the copy table before running the copy command

@@ -7,54 +7,60 @@ models:
     columns:
     
       - name: provider_id
-        description: "CMS Certification Number (natural key).""
+        description: "CMS Certification Number (natural key)."
         tests: [not_null]
 
       - name: overall_rating
         description: "Overall, aggregated rating of provider"
-        tests: [not_null]
+        tests: 
+          - accepted_values:
+              values: [1, 2, 3, 4, 5]
         
       - name: overall_rating_footnote
         description: "Footnote for overall rating"
-        tests: [not_null]
         
       - name: health_inspection_rating
         description: "Health inspection rating for provider"
-        tests: [not_null]
+        tests: 
+          - accepted_values:
+              values: [1, 2, 3, 4, 5]
         
       - name: health_inspection_rating_footnote
         description: "Footnote for health inspection rating"
-        tests: [not_null]
         
       - name: qm_rating
         description: "Quality management rating for provider"
-        tests: [not_null]
+        tests: 
+          - accepted_values:
+              values: [1, 2, 3, 4, 5]
         
       - name: qm_rating_footnote
         description: "Footnote for quality management rating"
-        tests: [not_null]
         
       - name: long_stay_qm_rating
         description: "Long stay quality management rating"
-        tests: [not_null]
+        tests: 
+          - accepted_values:
+              values: [1, 2, 3, 4, 5]
         
       - name: long_stay_qm_rating_footnote
         description: "Footnot for long stay quality managment rating"
-        tests: [not_null]
         
       - name: short_stay_qm_rating
         description: "Short stay quality management rating"
-        tests: [not_null]
+        tests: 
+          - accepted_values:
+              values: [1, 2, 3, 4, 5]
         
       - name: short_stay_qm_rating_footnote
         description: "Footnote for short stay quality management rating"
-        tests: [not_null]
         
       - name: staffing_rating
         description: "Staffing rating"
-        tests: [not_null]
+        tests: 
+          - accepted_values:
+              values: [1, 2, 3, 4, 5]
         
       - name: staffing_rating_footnote
         description: "Footnote for staffing rating"
-        tests: [not_null]
         
