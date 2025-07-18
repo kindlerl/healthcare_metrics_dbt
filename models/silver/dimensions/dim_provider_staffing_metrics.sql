@@ -21,12 +21,12 @@ WITH source_data AS (
 -- greater than 1, so we can filter those out in the next CTE.
 deduplicated AS (
     SELECT
-        TRIM(cms_certification_number) AS provider_id,
-        TRIM(reported_nurse_aide_staffing_hours_per_resident_per_day) AS reported_nurse_aide_staffing_hours_per_resident_per_day,
-        TRIM(reported_lpn_staffing_hours_per_resident_per_day) AS reported_lpn_staffing_hours_per_resident_per_day,
-        TRIM(reported_rn_staffing_hours_per_resident_per_day) AS reported_rn_staffing_hours_per_resident_per_day,
-        TRIM(reported_licensed_staffing_hours_per_resident_per_day) AS reported_licensed_staffing_hours_per_resident_per_day,
-        TRIM(reported_total_nurse_staffing_hours_per_resident_per_day) AS reported_total_nurse_staffing_hours_per_resident_per_day,
+        TRIM(CMS_CERTIFICATION_NUMBER) AS provider_id,
+        CAST(TRIM(reported_nurse_aide_staffing_hours_per_resident_per_day) AS float) AS reported_nurse_aide_staffing_hours_per_resident_per_day,
+        CAST(TRIM(reported_lpn_staffing_hours_per_resident_per_day) AS float) AS reported_lpn_staffing_hours_per_resident_per_day,
+        CAST(TRIM(reported_rn_staffing_hours_per_resident_per_day) AS float) AS reported_rn_staffing_hours_per_resident_per_day,
+        CAST(TRIM(reported_licensed_staffing_hours_per_resident_per_day) AS float) AS reported_licensed_staffing_hours_per_resident_per_day,
+        CAST(TRIM(reported_total_nurse_staffing_hours_per_resident_per_day) AS float) AS reported_total_nurse_staffing_hours_per_resident_per_day,
         row_number() OVER(PARTITION BY provider_id ORDER BY load_timestamp DESC NULLS LAST) AS rn
     FROM
         source_data
@@ -36,11 +36,11 @@ deduplicated AS (
 final AS (
     SELECT
         provider_id,
-        CAST(reported_nurse_aide_staffing_hours_per_resident_per_day AS float) AS reported_nurse_aide_staffing_hours_per_resident_per_day,
-        CAST(reported_lpn_staffing_hours_per_resident_per_day AS float) AS reported_lpn_staffing_hours_per_resident_per_day,
-        CAST(reported_rn_staffing_hours_per_resident_per_day AS float) AS reported_rn_staffing_hours_per_resident_per_day,
-        CAST(reported_licensed_staffing_hours_per_resident_per_day AS float) AS reported_licensed_staffing_hours_per_resident_per_day,
-        CAST(reported_total_nurse_staffing_hours_per_resident_per_day AS float) AS reported_total_nurse_staffing_hours_per_resident_per_day
+        reported_nurse_aide_staffing_hours_per_resident_per_day,
+        reported_lpn_staffing_hours_per_resident_per_day,
+        reported_rn_staffing_hours_per_resident_per_day,
+        reported_licensed_staffing_hours_per_resident_per_day,
+        reported_total_nurse_staffing_hours_per_resident_per_day
     FROM
         deduplicated
     WHERE
@@ -49,6 +49,11 @@ final AS (
 -- Select all the retained rows.
 SELECT
     {{ dbt_utils.generate_surrogate_key(['provider_id']) }} as provider_sk,
-    *
+    provider_id,
+    reported_nurse_aide_staffing_hours_per_resident_per_day,
+    reported_lpn_staffing_hours_per_resident_per_day,
+    reported_rn_staffing_hours_per_resident_per_day,
+    reported_licensed_staffing_hours_per_resident_per_day,
+    reported_total_nurse_staffing_hours_per_resident_per_day
 FROM
     final

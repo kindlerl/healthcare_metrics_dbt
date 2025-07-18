@@ -11,22 +11,22 @@ models:
         tests: [not_null]
 
       - name: number_of_facility_reported_incidents
-        description: “Number of facility-reported incidents"
+        description: "Number of facility-reported incidents"
 
       - name: number_of_substantiated_complaints
-        description: “Number of substantiated complaints"
+        description: "Number of substantiated complaints"
 
       - name: number_of_citations_from_infection_control_inspections
-        description: “Number of citations from Infection Control inspections"
+        description: "Number of citations from Infection Control inspections"
 
       - name: number_of_fines
-        description: “Number of fines"
+        description: "Number of fines"
 
       - name: total_amount_of_fines_in_dollars
-        description: “Total amount of fines (in US Dollars)"
+        description: "Total amount of fines (in US Dollars)"
 
       - name: number_of_payment_denials
-        description: “Number of payment denials"
+        description: "Number of payment denials"
 
       - name: total_number_of_penalties
-        description: “Total number of penalties"
+        description: "Total number of penalties"

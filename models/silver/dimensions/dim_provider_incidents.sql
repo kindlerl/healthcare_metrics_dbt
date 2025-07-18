@@ -22,13 +22,13 @@ WITH source_data AS (
 deduplicated AS (
     SELECT
         TRIM(CMS_CERTIFICATION_NUMBER) AS provider_id,
-        TRIM(NUMBER_OF_FACILITY_REPORTED_INCIDENTS) AS number_of_facility_reported_incidents,
-        TRIM(NUMBER_OF_SUBSTANTIATED_COMPLAINTS) AS number_of_substantiated_complaints,
-        TRIM(NUMBER_OF_CITATIONS_FROM_INFECTION_CONTROL_INSPECTIONS) AS number_of_citations_from_infection_control_inspections,
-        TRIM(NUMBER_OF_FINES) AS number_of_fines,
-        TRIM(TOTAL_AMOUNT_OF_FINES_IN_DOLLARS) AS total_amount_of_fines_in_dollars,
-        TRIM(NUMBER_OF_PAYMENT_DENIALS) AS number_of_payment_denials,
-        TRIM(TOTAL_NUMBER_OF_PENALTIES) AS total_number_of_penalties,
+         CAST(TRIM(NUMBER_OF_FACILITY_REPORTED_INCIDENTS) AS int) AS number_of_facility_reported_incidents,
+         CAST(TRIM(NUMBER_OF_SUBSTANTIATED_COMPLAINTS) AS int) AS number_of_substantiated_complaints,
+         CAST(TRIM(NUMBER_OF_CITATIONS_FROM_INFECTION_CONTROL_INSPECTIONS) AS int) AS number_of_citations_from_infection_control_inspections,
+         CAST(TRIM(NUMBER_OF_FINES) AS int) AS number_of_fines,
+         CAST(TRIM(TOTAL_AMOUNT_OF_FINES_IN_DOLLARS) AS int) AS total_amount_of_fines_in_dollars,
+         CAST(TRIM(NUMBER_OF_PAYMENT_DENIALS) AS int) AS number_of_payment_denials,
+         CAST(TRIM(TOTAL_NUMBER_OF_PENALTIES) AS int) AS total_number_of_penalties,
         ROW_NUMBER() OVER(PARTITION BY provider_id ORDER BY LOAD_TIMESTAMP DESC NULLS LAST) AS rn
     FROM
         source_data
@@ -36,19 +36,27 @@ deduplicated AS (
 final AS (
     SELECT
         provider_id,
-        CAST(number_of_facility_reported_incidents AS int) AS number_of_facility_reported_incidents,
-        CAST(number_of_substantiated_complaints AS int) AS number_of_substantiated_complaints,
-        CAST(number_of_citations_from_infection_control_inspections AS int) AS number_of_citations_from_infection_control_inspections,
-        CAST(number_of_fines AS int) AS number_of_fines,
-        CAST(total_amount_of_fines_in_dollars AS float) AS total_amount_of_fines_in_dollars,
-        CAST(number_of_payment_denials AS int) AS number_of_payment_denials,
-        CAST(total_number_of_penalties AS int) AS total_number_of_penalties
+        number_of_facility_reported_incidents,
+        number_of_substantiated_complaints,
+        number_of_citations_from_infection_control_inspections,
+        number_of_fines,
+        total_amount_of_fines_in_dollars,
+        number_of_payment_denials,
+        total_number_of_penalties
     FROM
         deduplicated
     WHERE
         rn = 1
 )
 SELECT
-    *
+    {{ dbt_utils.generate_surrogate_key(['provider_id']) }} as provider_sk,
+    provider_id,
+    number_of_facility_reported_incidents,
+    number_of_substantiated_complaints,
+    number_of_citations_from_infection_control_inspections,
+    number_of_fines,
+    total_amount_of_fines_in_dollars,
+    number_of_payment_denials,
+    total_number_of_penalties
 FROM
     final

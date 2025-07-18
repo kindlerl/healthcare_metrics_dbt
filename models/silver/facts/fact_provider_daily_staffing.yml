@@ -1,0 +1,90 @@
+version: 2
+
+models:
+  - name: fact_provider_daily_staffing
+    description: Daily staffing by provider and day fact table
+
+    columns:
+    
+      - name: provider_id
+        description: "CMS Certification Number (natural key)."
+        tests: [not_null]
+
+      - name: staffing_date
+        description: "Staffing date (natural key) field"
+        tests: [not_null]
+
+      - name: mds_census
+        description: "mds_census field"
+
+      - name: hrs_rn_don
+        description: "hrs_rn_don field"
+
+      - name: hrs_rn_don_emp
+        description: "hrs_rn_don_emp field"
+
+      - name: hrs_rn_don_ctr
+        description: "hrs_rn_don_ctr field"
+
+      - name: hrs_rn_admin
+        description: "hrs_rn_admin field"
+
+      - name: hrs_rn_admin_emp
+        description: "hrs_rn_admin_emp field"
+
+      - name: hrs_rn_admin_ctr
+        description: "hrs_rn_admin_ctr field"
+
+      - name: hrs_rn
+        description: "hrs_rn field"
+
+      - name: hrs_rn_emp
+        description: "hrs_rn_emp field"
+
+      - name: hrs_rn_ctr
+        description: "hrs_rn_ctr field"
+
+      - name: hrs_lpn_admin
+        description: "hrs_lpn_admin field"
+
+      - name: hrs_lpn_admin_emp
+        description: "hrs_lpn_admin_emp field"
+
+      - name: hrs_lpn_admin_ctr
+        description: "hrs_lpn_admin_ctr field"
+
+      - name: hrs_lpn
+        description: "hrs_lpn field"
+
+      - name: hrs_lpn_emp
+        description: "hrs_lpn_emp field"
+
+      - name: hrs_lpn_ctr
+        description: "hrs_lpn_ctr field"
+
+      - name: hrs_cna
+        description: "hrs_cna field"
+
+      - name: hrs_cna_emp
+        description: "hrs_cna_emp field"
+
+      - name: hrs_cna_ctr
+        description: "hrs_cna_ctr field"
+
+      - name: hrs_nat_rn
+        description: "hrs_nat_rn field"
+
+      - name: hrs_nat_rn_emp
+        description: "hrs_nat_rn_emp field"
+
+      - name: hrs_nat_rn_ctr
+        description: "hrs_nat_rn_ctr field"
+
+      - name: hrs_med_aide
+        description: "hrs_med_aide field"
+
+      - name: hrs_med_aide_emp
+        description: "hrs_med_aide_emp field"
+
+      - name: hrs_med_aide_ctr
+        description: "hrs_med_aide_ctr field"
