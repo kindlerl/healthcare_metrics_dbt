@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: fact_quality_measure_claims
+    description: Quality measurements of provider by date range
+
+    columns:
+      - name: provider_id
+        description: "CMS Certification Number (natural key)."
+        tests: [not_null]
+
+      - name: measure_code
+        description: "measure_code field"
+        tests: [not_null]
+
+      - name: measure_description
+        description: "measure_description field"
+
+      - name: resident_type
+        description: "resident_type field"
+
+      - name: adjusted_score
+        description: "adjusted_score field"
+
+      - name: observed_score
+        description: "observed_score field"
+
+      - name: expected_score
+        description: "expected_score field"
+
+      - name: footnote_for_score
+        description: "footnote_for_score field"
+
+      - name: used_in_quality_measure_five_star_rating
+        description: "used_in_quality_measure_five_star_rating field"
+
+      - name: measure_period_start
+        description: "measure_period_start field"
+
+      - name: measure_period_end
+        description: "measure_period_end field"
+
+      - name: measure_period_end
+        description: "measure_period_end field"
