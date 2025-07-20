@@ -5,7 +5,6 @@ models:
     description: Daily staffing by provider and day fact table
 
     columns:
-    
       - name: provider_id
         description: "CMS Certification Number (natural key)."
         tests: [not_null]

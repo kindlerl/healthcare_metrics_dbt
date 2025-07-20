@@ -1,8 +1,8 @@
 version: 2
 
 models:
-  - name: fact_health_citations
-    description: Deficiency citation history, including inspection cycle and corrections
+  - name: fact_fire_safety_citations
+    description: Fire safety deficiency citation history, including inspection cycle and corrections
 
     columns:
     - name: citation_sk
@@ -27,14 +27,17 @@ models:
 
     - name: deficiency_prefix
       description: "deficiency_prefix field"
-      tests: 
+      tests:
         - not_null
         - accepted_values:
-            values: ['F']
+            values: ['E', 'K']
 
     - name: deficiency_tag_number
       description: "deficiency_tag_number field"
       tests: [not_null]
+
+    - name: tag_version
+      description: "Tag version"
 
     - name: deficiency_category
       description: "Deficiency category (list of pre-defined categoreies)"
@@ -47,9 +50,9 @@ models:
     - name: scope_severity_code
       description: "scope_severity_code field"
       tests: 
+        - not_null
         - accepted_values:
             values: ['B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L']
-        - not_null
 
     - name: deficiency_corrected
       description: "Deficiency correction status"

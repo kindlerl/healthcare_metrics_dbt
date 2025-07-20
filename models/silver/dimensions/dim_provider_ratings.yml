@@ -5,7 +5,6 @@ models:
     description: Refined provider ratings dimension
 
     columns:
-    
       - name: provider_id
         description: "CMS Certification Number (natural key)."
         tests: [not_null]
