@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: fact_penalties
+    description: Deficiency citation history, including inspection cycle and corrections
+
+    columns:
+    - name: penalty_sk
+      description: "Surrogate key generated from provider_id, penalty_date"
+      tests: [not_null, unique]
+
+    - name: provider_id
+      description: "CMS certification number (natural key)"
+      tests: [not_null]
+
+    - name: penalty_date
+      description: "Date of penalty"
+      tests: [not_null]
+
+    - name: penalty_type
+      description: "Type of penalty"
+      tests: [not_null]
+
+    - name: fine_amount
+      description: "Fine amount"
+
+    - name: payment_denial_start_date
+      description: "Start date of payment denial"
+
+    - name: payment_denial_length_in_days
+      description: "Payment denial number of days"
