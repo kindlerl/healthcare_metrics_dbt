@@ -1,0 +1,44 @@
+version: 2
+
+models:
+  - name: fact_snf_quality_reporting_program_provider_data
+    description: Deficiency citation history, including inspection cycle and corrections
+
+    columns:
+    - name: snf_provider_sk
+      description: "Surrogate key generated from provider_id, measure_code"
+      tests: [not_null, unique]
+
+    - name: provider_id
+      description: "CMS certification number (natural key)"
+      tests: [not_null]
+
+    - name: measure_code
+      description: “measure_code field"
+      tests: [not_null]
+
+    - name: score
+      description: “score field"
+
+    - name: score_interpretation
+      description: “score_interpretation field"
+
+    - name: footnote
+      description: “footnote field"
+
+    - name: start_date
+      description: “start_date field"
+      tests: [not_null]
+
+    - name: end_date
+      description: “end_date field"
+      tests: [not_null]
+
+    - name: measure_date_range
+      description: “measure_date_range field"
+
+    - name: measure_date_range_start
+      description: “measure_date_range_start field"
+
+    - name: measure_date_range_end
+      description: “measure_date_range_end field"

@@ -12,7 +12,7 @@ WITH source_data AS (
     SELECT
         *
     FROM
-         {{ source('bronze', 'nh_covid_vax_provider') }}
+         {{ source('bronze', 'nh_covid_vax_averages') }}
 ),
 -- Next, try to remove duplicates.  This is achieved by selecting the fields
 -- we want to retain, applying a trim() function to them to remove leading/traling
@@ -21,18 +21,17 @@ WITH source_data AS (
 -- greater than 1, so we can filter those out in the next CTE.
 deduplicated AS (
     SELECT
-        TRIM(CMS_CERTIFICATION_NUMBER) AS provider_id,
         TRIM(STATE) AS state,
         CASE
-            WHEN TRIM(PERCENT_OF_RESIDENTS_WHO_ARE_UP_TO_DATE_ON_THEIR_VACCINES) = 'Not Available' THEN NULL
-            ELSE CAST(TRIM(PERCENT_OF_RESIDENTS_WHO_ARE_UP_TO_DATE_ON_THEIR_VACCINES) AS FLOAT)
+            WHEN TRIM(PERCENT_OF_RESIDENTS_WHO_ARE_UP_TO_DATE_ON_THEIR_VACCINE) = 'Not Available' THEN NULL
+            ELSE CAST(TRIM(PERCENT_OF_RESIDENTS_WHO_ARE_UP_TO_DATE_ON_THEIR_VACCINE) AS FLOAT)
         END AS percent_of_residents_who_are_up_to_date_on_their_vaccines,
         CASE
             WHEN TRIM(PERCENT_OF_STAFF_WHO_ARE_UP_TO_DATE_ON_THEIR_VACCINES) = 'Not Available' THEN NULL
             ELSE CAST(TRIM(PERCENT_OF_STAFF_WHO_ARE_UP_TO_DATE_ON_THEIR_VACCINES) AS FLOAT)
         END AS percent_of_staff_who_are_up_to_date_on_their_vaccines,
         TO_DATE(TRIM(DATE_VACCINATION_DATA_LAST_UPDATED), 'mm/dd/yyyy') AS date_vaccination_data_last_updated,
-        row_number() OVER(PARTITION BY provider_id ORDER BY load_timestamp DESC NULLS LAST) AS rn
+        row_number() OVER(PARTITION BY state ORDER BY load_timestamp DESC NULLS LAST) AS rn
     FROM
         source_data
 ),
@@ -40,7 +39,6 @@ deduplicated AS (
 -- value of "1" to filter out any duplicated rows.
 final AS (
     SELECT
-        provider_id,
         state,
         percent_of_residents_who_are_up_to_date_on_their_vaccines,
         percent_of_staff_who_are_up_to_date_on_their_vaccines,
@@ -51,7 +49,6 @@ final AS (
         rn = 1
 )
 SELECT
-        provider_id,
         state,
         percent_of_residents_who_are_up_to_date_on_their_vaccines,
         percent_of_staff_who_are_up_to_date_on_their_vaccines,

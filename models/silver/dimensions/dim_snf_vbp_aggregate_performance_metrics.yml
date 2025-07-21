@@ -1,0 +1,64 @@
+version: 2
+
+models:
+  - name: fact_snf_vbp_aggregate_performance_metrics
+    description: >
+        National-level summary of the FY 2024 SNF VBP aggregate performance metrics.
+        This table is used for reference and benchmarking purposes.
+
+    columns:
+      - name: baseline_period_fy_2019_national_average_readmission_rate
+        description: "baseline_period_fy_2019_national_average_readmission_rate field"
+        tests: [not_null]
+
+      - name: performance_period_fy_2022_national_average_readmission_rate
+        description: "performance_period_fy_2022_national_average_readmission_rate field"
+        tests: [not_null]
+
+      - name: fy_2024_achievement_threshold
+        description: "fy_2024_achievement_threshold field"
+        tests: [not_null]
+
+      - name: fy_2024_benchmark
+        description: "fy_2024_benchmark field"
+        tests: [not_null]
+
+      - name: range_of_performance_scores
+        description: "range_of_performance_scores field"
+        tests: [not_null]
+
+      - name: performance_score_range_start
+        description: "performance_score_range_start field"
+        tests: [not_null]
+
+      - name: performance_score_range_end
+        description: "performance_score_range_end field"
+        tests: [not_null]
+
+      - name: total_number_of_snfs_receiving_value_based_incentive_payments
+        description: "total_number_of_snfs_receiving_value_based_incentive_payments field"
+        tests: [not_null]
+
+      - name: range_of_incentive_payment_multipliers
+        description: "range_of_incentive_payment_multipliers field"
+        tests: [not_null]
+
+      - name: incentive_payment_multiplier_range_start
+        description: "incentive_payment_multiplier_range_start field"
+        tests: [not_null]
+
+      - name: incentive_payment_multiplier_range_end
+        description: "incentive_payment_multiplier_range_end field"
+        tests: [not_null]
+
+      - name: range_of_value_based_incentive_payments
+        description: "range_of_value_based_incentive_payments field"
+
+      - name: value_based_incentive_payments_range_start
+        description: "value_based_incentive_payments_range_start field"
+
+      - name: value_based_incentive_payments_range_end
+        description: "value_based_incentive_payments_range_end field"
+
+      - name: total_amount_of_value_based_incentive_payments
+        description: "total_amount_of_value_based_incentive_payments field"

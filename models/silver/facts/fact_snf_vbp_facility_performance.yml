@@ -1,0 +1,53 @@
+version: 2
+
+models:
+  - name: fact_snf_vbp_facility_performance
+    description: Skilled Nursing Facility, Value-Based Purchasing performance by provider
+
+    columns:
+    - name: provider_id
+      description: "CMS certification number (natural key)"
+      tests: [not_null]
+
+    - name: snf_vbp_program_ranking
+      description: “SNF program ranking"
+      tests: [not_null]
+
+    - name: footnote_snf_vbp_program_ranking
+      description: “Footnote for SNF program ranking"
+
+    - name: baseline_period_fy_2019_risk_standardized_readmission_rate
+      description: “Baseline period for 2019 readmission rate"
+
+    - name: footnote_baseline_period_fy_2019_risk_standardized_readmission_rate
+      description: “Footnote for Baseline period for 2019 readmission rate"
+
+    - name: performance_period_fy_2022_risk_standardized_readmission_rate
+      description: “Performance period for 2022 risk readmission rate"
+
+    - name: footnote_performance_period_fy_2022_risk_standardized_readmission_rate
+      description: “Footnote for Performance period for 2022 risk readmission rate"
+
+    - name: achievement_score
+      description: “Achievement score"
+
+    - name: footnote_achievement_score
+      description: “Footnote for Achievement score"
+
+    - name: improvement_score
+      description: “Improvement score"
+
+    - name: footnote_improvement_score
+      description: “Footnote for Improvement score"
+
+    - name: performance_score
+      description: “Performance score"
+
+    - name: footnote_performance_score
+      description: “Footnote for Performance score"
+
+    - name: incentive_payment_multiplier
+      description: “Incentive payment multiplier"
+
+    - name: footnote_incentive_payment_multiplier
+      description: “Footnote for Incentive payment multiplier"
