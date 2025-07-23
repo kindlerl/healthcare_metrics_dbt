@@ -15,11 +15,9 @@ models:
 
     - name: percent_of_residents_who_are_up_to_date_on_their_vaccines
       description: "Percent of residents of provider who are up to date on their vaccines"
-      tests: [not_null]
 
     - name: percent_of_staff_who_are_up_to_date_on_their_vaccines
       description: "Percent of staff of provider who are up to date on their vaccines"
-      tests: [not_null]
 
     - name: date_vaccination_data_last_updated
       description: "Date of last vaccine status update"

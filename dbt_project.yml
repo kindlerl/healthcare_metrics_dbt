@@ -32,3 +32,76 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   dbt_healthcare:
     # Config indicated by + and applies to all files under models/example/
+
+vars:
+  bronze_copy_config:
+
+    database: HEALTHCARE_DB
+    schema: BRONZE
+    stage_name: HEALTHCARE_S3_STAGE
+    format_name: HEALTHCARE_STAGE_CSV_FORMAT
+
+    tables:
+    - table_name: FY_2024_SNF_VBP_Aggregate_Performance
+      pattern: '.*_FY_2024_SNF_VBP_Aggregate_Performance.*?\.csv'
+      reset: true
+    - table_name: FY_2024_SNF_VBP_Facility_Performance
+      pattern: '.*_FY_2024_SNF_VBP_Facility_Performance.*?\.csv'
+      reset: true
+    - table_name: NH_Citation_Descriptions
+      pattern: '.*_NH_CitationDescriptions.*?\.csv'
+      reset: true
+    - table_name: NH_Covid_Vax_Averages
+      pattern: '.*_NH_CovidVaxAverages.*?\.csv'
+      reset: true
+    - table_name: NH_Covid_Vax_Provider
+      pattern: '.*_NH_CovidVaxProvider.*?\.csv'
+      reset: true
+    - table_name: NH_Data_Collection_Intervals
+      pattern: '.*_NH_DataCollectionIntervals.*?\.csv'
+      reset: true
+    - table_name: NH_Fire_Safety_Citations
+      pattern: '.*_NH_FireSafetyCitations.*?\.csv'
+      reset: true
+    - table_name: NH_Health_Citations
+      pattern: '.*_NH_HealthCitations.*?\.csv'
+      reset: true
+    - table_name: NH_Health_Inspec_Cutpoints_State
+      pattern: '.*_NH_HlthInspecCutpointsState.*?\.csv'
+      reset: true
+    - table_name: NH_Ownership
+      pattern: '.*_NH_Ownership.*?\.csv'
+      reset: true
+    - table_name: NH_Penalties
+      pattern: '.*_NH_Penalties.*?\.csv'
+      reset: true
+    - table_name: NH_Provider_Info
+      pattern: '.*_NH_ProviderInfo.*?\.csv'
+      reset: true
+    - table_name: NH_Quality_Msr_Claims
+      pattern: '.*_NH_QualityMsr_Claims.*?\.csv'
+      reset: true
+    - table_name: NH_Quality_Msr_MDS
+      pattern: '.*_NH_QualityMsr_MDS.*?\.csv'
+      reset: true
+    - table_name: NH_State_US_Averages
+      pattern: '.*_NH_StateUSAverages.*?\.csv'
+      reset: true
+    - table_name: NH_Survey_Dates
+      pattern: '.*_NH_SurveyDates.*?\.csv'
+      reset: true
+    - table_name: NH_Survey_Summary
+      pattern: '.*_NH_SurveySummary.*?\.csv'
+      reset: true
+    - table_name: PBJ_Daily_Nurse_Staffing_Main
+      pattern: '.*_PBJ_Daily_Nurse_Staffing.*?\.csv'
+      reset: true
+    - table_name: Skilled_Nursing_Facility_Quality_Reporting_Program_National_Data
+      pattern: '.*_Skilled_Nursing_Facility_Quality_Reporting_Program_National_Data.*?\.csv'
+      reset: true
+    - table_name: Skilled_Nursing_Facility_Quality_Reporting_Program_Provider_Data
+      pattern: '.*_Skilled_Nursing_Facility_Quality_Reporting_Program_Provider_Data.*?\.csv'
+      reset: true
+    - table_name: Swing_Bed_SNF_data
+      pattern: '.*_Swing_Bed_SNF_data.*?\.csv'
+      reset: true
