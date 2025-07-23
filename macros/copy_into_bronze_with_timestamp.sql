@@ -64,6 +64,6 @@
     {% endif %}
 
     {% do log("File from " ~ full_stage ~ " with pattern " ~ pattern ~ " was " ~ reset_clause + "copied into the Bronze table " ~ full_table, info=True) %}
-    {% log("===================================", info=True) %}
+    {% do log("===================================", info=True) %}
 
 {% endmacro %}

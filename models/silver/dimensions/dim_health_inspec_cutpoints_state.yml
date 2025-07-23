@@ -1,0 +1,19 @@
+version: 2
+
+models:
+  - name: dim_health_inspec_cutpoints_state
+    description: "Parsed state-level star rating ranges for health inspections."
+    
+    columns:
+      - name: state
+        tests: [not_null, unique]
+      - name: five_star_min
+      - name: five_star_max
+      - name: four_star_min
+      - name: four_star_max
+      - name: three_star_min
+      - name: three_star_max
+      - name: two_star_min
+      - name: two_star_max
+      - name: one_star_min
+      - name: updated_at
