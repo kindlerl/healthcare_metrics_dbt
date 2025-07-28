@@ -49,14 +49,44 @@ deduplicated AS (
         TRIM(cms_region) AS cms_region,
         TRIM(provider_ssa_county_code) AS provider_ssa_county_code,
         TRIM(ownership_type) AS ownership_type,
+        CAST(TRIM(number_of_certified_beds) AS INT) AS number_of_certified_beds,
+        CAST(TRIM(average_number_of_residents_per_day) AS INT) AS average_number_of_residents_per_day,
+        CAST(TRIM(overall_rating) AS INT) AS overall_rating,
+        CAST(TRIM(staffing_rating) AS INT) AS staffing_rating,
         TRIM(provider_type) AS provider_type,
+        TRIM(special_focus_status) AS special_focus_status,
+        CASE
+            WHEN TRIM(abuse_icon) = 'Y' THEN TRUE::BOOLEAN
+            WHEN TRIM(abuse_icon) = 'N' THEN FALSE::BOOLEAN
+            ELSE NULL
+        END AS abuse_icon,
         TRIM(legal_business_name) AS legal_business_name,
-        TRIM(provider_resides_in_hospital) AS provider_resides_in_hospital,
+        CASE
+            WHEN TRIM(provider_resides_in_hospital) = 'Y' THEN TRUE::BOOLEAN
+            WHEN TRIM(provider_resides_in_hospital) = 'N' THEN FALSE::BOOLEAN
+            ELSE NULL
+        END AS provider_resides_in_hospital,
+        CAST(TRIM(reported_total_nurse_staffing_hours_per_resident_per_day) AS INT) AS reported_total_nurse_staffing_hours_per_resident_per_day,
         TO_DATE(TRIM(date_first_approved_to_provide_medicare_and_medicaid_services), 'YYYY-MM-DD') AS date_first_approved_to_provide_medicare_and_medicaid_services,
-        TRIM(continuing_care_retirement_community) AS continuing_care_retirement_community,
+        
+        CASE
+            WHEN TRIM(continuing_care_retirement_community) = 'Y' THEN TRUE::BOOLEAN
+            WHEN TRIM(continuing_care_retirement_community) = 'N' THEN FALSE::BOOLEAN
+            ELSE NULL
+        END AS continuing_care_retirement_community,
+
         TRIM(with_a_resident_and_family_council) AS with_a_resident_and_family_council,
-        TRIM(automatic_sprinkler_systems_in_all_required_areas) AS automatic_sprinkler_systems_in_all_required_areas,
-        TRIM(provider_changed_ownership_in_last_12_months) AS provider_changed_ownership_in_last_12_months,
+
+        CASE
+            WHEN  TRIM(automatic_sprinkler_systems_in_all_required_areas) = 'Yes' THEN TRUE::BOOLEAN
+            WHEN  TRIM(automatic_sprinkler_systems_in_all_required_areas) = 'No' THEN FALSE::BOOLEAN
+            ELSE NULL
+        END AS automatic_sprinkler_systems_in_all_required_areas,
+        CASE
+            WHEN TRIM(provider_changed_ownership_in_last_12_months) = 'Y' THEN TRUE::BOOLEAN
+            WHEN TRIM(provider_changed_ownership_in_last_12_months) = 'N' THEN FALSE::BOOLEAN
+            ELSE NULL
+        END AS provider_changed_ownership_in_last_12_months,
         CAST(TRIM(latitude) AS FLOAT) AS latitude,
         CAST(TRIM(longitude) AS FLOAT) AS longitude,
         row_number() OVER(PARTITION BY provider_id, cms_region ORDER BY load_timestamp DESC NULLS LAST) AS rn
@@ -78,9 +108,16 @@ final AS (
         cms_region,
         provider_ssa_county_code,
         ownership_type,
+        number_of_certified_beds,
+        average_number_of_residents_per_day,
+        overall_rating,
+        staffing_rating,
         provider_type,
+        special_focus_status,
+        abuse_icon,
         legal_business_name,
         provider_resides_in_hospital,
+        reported_total_nurse_staffing_hours_per_resident_per_day,
         date_first_approved_to_provide_medicare_and_medicaid_services,
         continuing_care_retirement_community,
         with_a_resident_and_family_council,
@@ -107,9 +144,16 @@ SELECT
     cms_region,
     provider_ssa_county_code,
     ownership_type,
+    special_focus_status,
+    abuse_icon,
+    number_of_certified_beds,
+    average_number_of_residents_per_day,
+    overall_rating,
+    staffing_rating,
     provider_type,
     legal_business_name,
     provider_resides_in_hospital,
+    reported_total_nurse_staffing_hours_per_resident_per_day,
     date_first_approved_to_provide_medicare_and_medicaid_services,
     continuing_care_retirement_community,
     with_a_resident_and_family_council,
