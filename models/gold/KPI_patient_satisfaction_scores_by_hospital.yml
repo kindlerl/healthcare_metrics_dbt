@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: KPI_patient_satisfaction_scores_by_hospital
+    description: >
+      There is no direct patient satisfaction survey data, so we'll use the
+      ratings available in our dim_provider_ratings table, focusing on 3
+      specific ratings:
+        • overall_rating
+        • short_stay_qm_rating
+        • long_stay_qm_rating
+
+      This KPI is more of a summary table rather than a trending table.
+      
+      +-------------+---------------+-------+----------------+-------------------+------------------+
+      | Provider ID | Provider Name | State | Overall Rating | Short-Stay Rating | Long-Stay Rating |
+      +-------------+---------------+-------+----------------+-------------------+------------------+
+
+      Filter out rows where all 3 rating columns are null to limit clutter.
+     
+    columns:
+      - name: provider_id
+        description: Provider ID of specific provider
+      - name: provider_name
+        description: Provider name
+      - name: state
+        description: 2 character abbreviation for each state represented
+      - name: overall_rating
+        description: Aggregated value of rating over time
+      - name: short_stay_rating
+        description: Short stay rating
+      - name: long_stay_rating
+        description: Long stay rating
+

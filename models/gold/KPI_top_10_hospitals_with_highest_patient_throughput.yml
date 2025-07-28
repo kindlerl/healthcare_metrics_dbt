@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: KPI_top_10_hospitals_with_highest_patient_throughput
+    description: >
+      NOTE: Throughput requires a date range to track patient movement over time.
+      Since the available data only includes a single day (1970-08-23),
+      this metric cannot be accurately computed as intended.
+
+      The query below represents a SNAPSHOT of the top 10 facilities with the
+      highest patient count on that single day
+
+    columns:
+      - name: provider_id
+        description: Provider ID of specific provider
+      - name: provider_name
+        description: Provider name
+      - name: state
+        description: 2 character abbreviation for each state represented
+      - name: patient_count_on_1970_08_23
+        description: Single-day snapshot of patient count (based on limited data of one day)
+
+
+
+    
