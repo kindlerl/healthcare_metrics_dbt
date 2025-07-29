@@ -22,7 +22,7 @@ WITH source_data AS (
 deduplicated AS (
     SELECT
         TRIM(PROVNUM) AS provider_id,
-        CAST(TRIM(WORKDATE) AS date) AS staffing_date,
+        TO_DATE(TRIM(WORKDATE), 'YYYYMMDD') AS staffing_date,
         CAST(TRIM(MDSCENSUS) AS int) AS mds_census,
         CAST(TRIM(HRS_RNDON) AS float) AS hrs_rn_don,
         CAST(TRIM(HRS_RNDON_EMP) AS float) AS hrs_rn_don_emp,

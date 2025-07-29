@@ -17,8 +17,8 @@ models:
         description: Provider name
       - name: state
         description: 2 character abbreviation for each state represented
-      - name: patient_count_on_1970_08_23
-        description: Single-day snapshot of patient count (based on limited data of one day)
+      - name: patient_count
+        description: Patient count
 
 
 
