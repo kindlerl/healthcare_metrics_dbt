@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: dim_survey_dates
+    description: "Survey types and dates related to provider"
+
+    columns:
+      - name: survey_date_sk
+        description: "Surrogate key for joining fact tables."
+        tests: [not_null unique]
+      
+      - name: provider_id
+        description: "CMS Certification Number (natural key)."
+        tests: [not_null]
+      
+      - name: survey_date
+        description: "Survey date."
+        tests: [not_null]
+
+      - name: survey_type
+        description: "Survey type"
+        tests: [not_null]
+
+      - name: survey_cycle
+        description: "Survey cycle"
+        tests: [not_null]
+

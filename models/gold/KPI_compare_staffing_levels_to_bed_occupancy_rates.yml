@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: KPI_compare_staffing_levels_to_bed_occupancy_rates
+    description: >
+      Utilize the KPI for Average_nurse_to_patient_ratio and
+      bed_utilization_rates_by_hospital, combining the results to
+      create a direct comparison of the staffing levels and 
+      bed occupancy rate
+
+    columns:
+      - name: provider_name
+        description: Provider name
+      - name: state
+        description: 2 character abbreviation for each state represented
+      - name: month
+        description: Year-month time grouping
+      - name: nurse_hours_to_patient_ratio
+        description: Nurse hours to patient ratio
+      - name: occupancy_rate_pct
+        description: Occupancy rate percentage

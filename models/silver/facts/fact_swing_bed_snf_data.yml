@@ -1,0 +1,74 @@
+version: 2
+
+models:
+  - name: fact_swing_bed_snf_data
+    description: >
+      Fact table containing swing bed SNF quality measures by provider and 
+      reporting period. Provider attributes (e.g., name, address, CMS region) 
+      are stored with each row for simplicity, despite some redundancy. 
+      This decision prioritizes clarity over normalization given the relatively 
+      small size and narrow scope of this table.
+
+    columns:
+    - name: swing_bed_sk
+      description: “Surrogate key"
+      tests: [not_null]
+
+    - name: provider_id
+      description: "CMS certification number (natural key)"
+      tests: [not_null]
+
+    - name: provider_name
+      description: “Provider name"
+      tests: [not_null]
+
+    - name: address_line_1
+      description: “Provider address 1"
+
+    - name: address_line_2
+      description: “Provider address 2"
+
+    - name: city_town
+      description: “City or Town"
+
+    - name: state
+      description: “State"
+
+    - name: zip_code
+      description: “Zip code"
+
+    - name: county_parish
+      description: “County or Parish"
+
+    - name: telephone_number
+      description: “Telephone"
+
+    - name: cms_region
+      description: “CMS Region"
+
+    - name: measure_code
+      description: “Measure code"
+
+    - name: score
+      description: “Score"
+
+    - name: score_interpretation
+      description: “Score interpretation when score value is not available"
+
+    - name: footnote
+      description: “Footnote"
+
+    - name: start_date
+      description: “Start date"
+
+    - name: end_date
+      description: “End date"
+
+    - name: measure_date_range
+      description: “Measure date range, raw"
+
+    - name: measure_date_range_start
+      description: “Measure date range - start date"
+
+    - name: measure_date_range_end
+      description: “Measure date range - end date"

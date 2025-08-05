@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: dim_citation_descriptions
+    description: Dimension table capturing deficiency descriptions and categories, referenced by a deficiency id.
+
+    columns:
+      - name: citation_sk
+        description: "Surrogate key generated from deficiency_id."
+        tests: [not_null, unique]
+
+      - name: deficiency_id
+        description: "Deficiency id (natural key)."
+        tests: [not_null, unique]
+
+      - name: deficiency_prefix
+        description: "Deficiency prefix"
+        tests:
+          - accepted_values:
+              values: ['E', 'F', 'K']
+
+      - name: deficiency_tag_number
+        description: "Deficiency tag number."
+        tests: [not_null]
+
+      - name: deficiency_description
+        description: "Deficiency description"
+
+      - name: deficiency_category
+        description: "Deficiency category"

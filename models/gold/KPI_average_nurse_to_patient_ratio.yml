@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: KPI_average_nurse_to_patient_ratio
+    description: >
+      KPI: Average nurse-to-patient ratio by hospital, state, and department.
+
+      Assuming MDS_CENSUS is capturing the number of residents
+      MDS = Minimum Data Set
+      Census = number of residents/patients
+      HOWEVER, we do NOT have a "body" metric (like nurse_id, staff_roster_id, etc)
+      so we fall back to a standard practice in healthcare analytics
+      when working with staffing data to count HOURS against # of patients
+      to answer the question:
+
+      "How many hours of nurse time did each patient receive on average?"
+
+      This is often called "Nursing Hours Per Resident Per Day" (HPRD)
+
+      So, the Average nursing hourse to patient ratio would be calculates as:
+      Sum(TotalNursingHours) / TotalResidents
+
+    columns:
+      - name: month
+        description: Year-month time grouping
+      - name: state
+        description: 2 character abbreviation for states represented
+      - name: nurse_hours_to_patient_ratio DESC
+        description: Nursing hours per patient ratio
+      

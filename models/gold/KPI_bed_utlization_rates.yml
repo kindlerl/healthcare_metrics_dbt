@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: KPI_bed_utlization_rates
+    description: >
+      This KPI is intended to show bed utilization by hospital and department.
+      Bed utilization is calculated as:
+      (Total Patients / Certified Beds) * 100
+
+      HOWEVER, the dataset does not contain any department-level granularity.
+      Therefore, this KPI can only be calculated at the hospital level.
+      The current output reflects bed utilization per facility.
+      Department-level breakdown is unavailable in the current data.     
+
+    columns:
+      - name: provider_id
+        description: Provider ID of specific provider
+      - name: provider_name
+        description: Provider name
+      - name: state
+        description: 2 character abbreviation for each state represented
+      - name: month
+        description: Year-month time grouping
+      - name: total_patients
+        description: Total number of patients
+      - name: number_of_certified_beds
+        description: Total number of certified beds
+      - name: occupancy_rate_pct
+        description: Occupancy rate of patients to beds

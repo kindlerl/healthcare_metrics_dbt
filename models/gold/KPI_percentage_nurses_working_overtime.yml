@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: KPI_percentage_nurses_working_overtime
+    description: >
+      Percentage of nuses working overtime by provider, state, and month.
+
+      Since the data does not reflect individual nurse metrics, we are 
+      creating a proxy using a standard calculation of:
+
+      Overtime_Hours = Total_Contractor_Hours / Total_Nurse_Hours
+
+      Contractors (_CTR columns) are typically used when staff (_EMP columns)
+      are overextended.  This can be used as a proxy for overtime.
+
+    columns:
+      - name: provider_id
+        description: Provider ID of the individual provider
+      - name: provider_name
+        description: Name of the provider
+      - name: state
+        description: 2 character abbreviation of each state represented
+      - name: month
+        description: Year-Month level time grouiping
+      - name: pct_overtime_hours
+        description: Overtime hours calculation

@@ -1,0 +1,84 @@
+version: 2
+
+models:
+  - name: dim_provider
+    description: "Refined provider dimension with address ownership, and structural metadata."
+
+    columns:
+      - name: provider_sk
+        description: "Surrogate key for joining fact tables."
+        tests: [not_null unique]
+      
+      - name: provider_id
+        description: "CMS Certification Number (natural key)."
+        tests: [not_null]
+      
+      - name: provider_name
+        description: "Common name of the provider/facility."
+        tests: [not_null]
+
+      - name: provider_address
+        description: "Address of provider"
+        tests: [not_null]
+
+      - name: city_town
+        description: "City or town of provider"
+        tests: [not_null]
+
+      - name: state
+        description: "State of provider"
+        tests: [not_null]
+
+      - name: zip_code
+        description: "Postal code of provider"
+        tests: [not_null]
+
+      - name: telephone_number
+        description: "Telephone number of provider"
+        tests: [not_null]
+
+      - name: county_name
+        description: "County name or parish of provider"
+        tests: [not_null]
+
+      - name: provider_ssa_county_code
+        description: "County code of provider SSA"
+        tests: [not_null]
+
+      - name: ownership_type
+        description: "Ownership type: For profit, corporation/county/individual"
+        tests: [not_null]
+
+      - name: provider_type
+        description: "Type of provider (Medicare, Medicaid)"
+        tests: [not_null]
+
+      - name: legal_business_name
+        description: "Legal, registered business name"
+
+      - name: provider_resides_in_hospital
+        description: "Does the provider have an office in the hospital"
+
+      - name: date_first_approved_to_provide_medicare_and_medicaid_services
+        description: "Date when medicare or medicaid services were first approved"
+
+      - name: continuing_care_retirement_community
+        description: "Is the provider a Continuing Care Retirement Community"
+
+      - name: with_a_resident_and_family_council
+        description: ""
+
+      - name: automatic_sprinkler_systems_in_all_required_areas
+        description: "Is an automatic sprinkler system in place for all required areas"
+
+      - name: provider_changed_ownership_in_last_12_months
+        description: "Has ownership of the provider changed in the last 12 months"
+
+      - name: latitude
+        description: "lateral geo-position of provider"
+        tests: [not_null]
+
+      - name: longitude
+        description: "longitudinal geo-position of provider"
+        tests: [not_null]
+

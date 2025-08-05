@@ -1,0 +1,318 @@
+version: 2
+
+models:
+  - name: dim_provider_raw
+    description: Raw provider information, filtered for duplicates
+
+    columns:
+    
+      - name: provider_id
+        description: "CMS Certification Number (natural key)."
+        tests: [not_null]
+        
+      - name: provider_name
+        description: "provider_name column"
+        
+      - name: provider_address
+        description: "provider_address column"
+        
+      - name: city_town
+        description: "city_town column"
+        
+      - name: state
+        description: "state column"
+        
+      - name: zip_code
+        description: "zip_code column"
+        
+      - name: telephone_number
+        description: "telephone_number column"
+        
+      - name: provider_ssa_county_code
+        description: "provider_ssa_county_code column"
+        
+      - name: county_parish
+        description: "county_parish column"
+        
+      - name: ownership_type
+        description: "ownership_type column"
+        
+      - name: number_of_certified_beds
+        description: "number_of_certified_beds column"
+        
+      - name: average_number_of_residents_per_day
+        description: "average_number_of_residents_per_day column"
+        
+      - name: average_number_of_residents_per_day_footnote
+        description: "average_number_of_residents_per_day_footnote column"
+        
+      - name: provider_type
+        description: "provider_type column"
+        
+      - name: provider_resides_in_hospital
+        description: "provider_resides_in_hospital column"
+        
+      - name: legal_business_name
+        description: "legal_business_name column"
+        
+      - name: date_first_approved_to_provide_medicare_and_medicaid_services
+        description: "date_first_approved_to_provide_medicare_and_medicaid_services column"
+        
+      - name: affiliated_entity_name
+        description: "affiliated_entity_name column"
+        
+      - name: affiliated_entity_id
+        description: "affiliated_entity_id column"
+        
+      - name: continuing_care_retirement_community
+        description: "continuing_care_retirement_community column"
+        
+      - name: special_focus_status
+        description: "special_focus_status column"
+        
+      - name: abuse_icon
+        description: "abuse_icon column"
+        
+      - name: most_recent_health_inspection_more_than_2_years_ago
+        description: "most_recent_health_inspection_more_than_2_years_ago column"
+        
+      - name: provider_changed_ownership_in_last_12_months
+        description: "provider_changed_ownership_in_last_12_months column"
+        
+      - name: with_a_resident_and_family_council
+        description: "with_a_resident_and_family_council column"
+        
+      - name: automatic_sprinkler_systems_in_all_required_areas
+        description: "automatic_sprinkler_systems_in_all_required_areas column"
+        
+      - name: overall_rating
+        description: "overall_rating column"
+        
+      - name: overall_rating_footnote
+        description: "overall_rating_footnote column"
+        
+      - name: health_inspection_rating
+        description: "health_inspection_rating column"
+        
+      - name: health_inspection_rating_footnote
+        description: "health_inspection_rating_footnote column"
+        
+      - name: qm_rating
+        description: "qm_rating column"
+        
+      - name: qm_rating_footnote
+        description: "qm_rating_footnote column"
+        
+      - name: long_stay_qm_rating
+        description: "long_stay_qm_rating column"
+        
+      - name: long_stay_qm_rating_footnote
+        description: "long_stay_qm_rating_footnote column"
+        
+      - name: short_stay_qm_rating
+        description: "short_stay_qm_rating column"
+        
+      - name: short_stay_qm_rating_footnote
+        description: "short_stay_qm_rating_footnote column"
+        
+      - name: staffing_rating
+        description: "staffing_rating column"
+        
+      - name: staffing_rating_footnote
+        description: "staffing_rating_footnote column"
+        
+      - name: reported_staffing_footnote
+        description: "reported_staffing_footnote column"
+        
+      - name: physical_therapist_staffing_footnote
+        description: "physical_therapist_staffing_footnote column"
+        
+      - name: reported_nurse_aide_staffing_hours_per_resident_per_day
+        description: "reported_nurse_aide_staffing_hours_per_resident_per_day column"
+        
+      - name: reported_lpn_staffing_hours_per_resident_per_day
+        description: "reported_lpn_staffing_hours_per_resident_per_day column"
+        
+      - name: reported_rn_staffing_hours_per_resident_per_day
+        description: "reported_rn_staffing_hours_per_resident_per_day column"
+        
+      - name: reported_licensed_staffing_hours_per_resident_per_day
+        description: "reported_licensed_staffing_hours_per_resident_per_day column"
+        
+      - name: reported_total_nurse_staffing_hours_per_resident_per_day
+        description: "reported_total_nurse_staffing_hours_per_resident_per_day column"
+        
+      - name: total_number_of_nurse_staff_hours_per_resident_per_day_on_the_weekend
+        description: "total_number_of_nurse_staff_hours_per_resident_per_day_on_the_weekend column"
+        
+      - name: registered_nurse_hours_per_resident_per_day_on_the_weekend
+        description: "registered_nurse_hours_per_resident_per_day_on_the_weekend column"
+        
+      - name: reported_physical_therapist_staffing_hours_per_resident_per_day
+        description: "reported_physical_therapist_staffing_hours_per_resident_per_day column"
+        
+      - name: total_nursing_staff_turnover
+        description: "total_nursing_staff_turnover column"
+        
+      - name: total_nursing_staff_turnover_footnote
+        description: "total_nursing_staff_turnover_footnote column"
+        
+      - name: registered_nurse_turnover
+        description: "registered_nurse_turnover column"
+        
+      - name: registered_nurse_turnover_footnote
+        description: "registered_nurse_turnover_footnote column"
+        
+      - name: number_of_administrators_who_have_left_the_nursing_home
+        description: "number_of_administrators_who_have_left_the_nursing_home column"
+        
+      - name: administrator_turnover_footnote
+        description: "administrator_turnover_footnote column"
+        
+      - name: nursing_case_mix_index
+        description: "nursing_case_mix_index column"
+        
+      - name: nursing_case_mix_index_ratio
+        description: "nursing_case_mix_index_ratio column"
+        
+      - name: case_mix_nurse_aide_staffing_hours_per_resident_per_day
+        description: "case_mix_nurse_aide_staffing_hours_per_resident_per_day column"
+        
+      - name: case_mix_lpn_staffing_hours_per_resident_per_day
+        description: "case_mix_lpn_staffing_hours_per_resident_per_day column"
+        
+      - name: case_mix_rn_staffing_hours_per_resident_per_day
+        description: "case_mix_rn_staffing_hours_per_resident_per_day column"
+        
+      - name: case_mix_total_nurse_staffing_hours_per_resident_per_day
+        description: "case_mix_total_nurse_staffing_hours_per_resident_per_day column"
+        
+      - name: case_mix_weekend_total_nurse_staffing_hours_per_resident_per_day
+        description: "case_mix_weekend_total_nurse_staffing_hours_per_resident_per_day column"
+        
+      - name: adjusted_nurse_aide_staffing_hours_per_resident_per_day
+        description: "adjusted_nurse_aide_staffing_hours_per_resident_per_day column"
+        
+      - name: adjusted_lpn_staffing_hours_per_resident_per_day
+        description: "adjusted_lpn_staffing_hours_per_resident_per_day column"
+        
+      - name: adjusted_rn_staffing_hours_per_resident_per_day
+        description: "adjusted_rn_staffing_hours_per_resident_per_day column"
+        
+      - name: adjusted_total_nurse_staffing_hours_per_resident_per_day
+        description: "adjusted_total_nurse_staffing_hours_per_resident_per_day column"
+        
+      - name: adjusted_weekend_total_nurse_staffing_hours_per_resident_per_day
+        description: "adjusted_weekend_total_nurse_staffing_hours_per_resident_per_day column"
+        
+      - name: rating_cycle_1_standard_survey_health_date
+        description: "rating_cycle_1_standard_survey_health_date column"
+        
+      - name: rating_cycle_1_total_number_of_health_deficiencies
+        description: "rating_cycle_1_total_number_of_health_deficiencies column"
+        
+      - name: rating_cycle_1_number_of_standard_health_deficiencies
+        description: "rating_cycle_1_number_of_standard_health_deficiencies column"
+        
+      - name: rating_cycle_1_number_of_complaint_health_deficiencies
+        description: "rating_cycle_1_number_of_complaint_health_deficiencies column"
+        
+      - name: rating_cycle_1_health_deficiency_score
+        description: "rating_cycle_1_health_deficiency_score column"
+        
+      - name: rating_cycle_1_number_of_health_revisits
+        description: "rating_cycle_1_number_of_health_revisits column"
+        
+      - name: rating_cycle_1_health_revisit_score
+        description: "rating_cycle_1_health_revisit_score column"
+        
+      - name: rating_cycle_1_total_health_score
+        description: "rating_cycle_1_total_health_score column"
+        
+      - name: rating_cycle_2_standard_health_survey_date
+        description: "rating_cycle_2_standard_health_survey_date column"
+        
+      - name: rating_cycle_2_total_number_of_health_deficiencies
+        description: "rating_cycle_2_total_number_of_health_deficiencies column"
+        
+      - name: rating_cycle_2_number_of_standard_health_deficiencies
+        description: "rating_cycle_2_number_of_standard_health_deficiencies column"
+        
+      - name: rating_cycle_2_number_of_complaint_health_deficiencies
+        description: "rating_cycle_2_number_of_complaint_health_deficiencies column"
+        
+      - name: rating_cycle_2_health_deficiency_score
+        description: "rating_cycle_2_health_deficiency_score column"
+        
+      - name: rating_cycle_2_number_of_health_revisits
+        description: "rating_cycle_2_number_of_health_revisits column"
+        
+      - name: rating_cycle_2_health_revisit_score
+        description: "rating_cycle_2_health_revisit_score column"
+        
+      - name: rating_cycle_2_total_health_score
+        description: "rating_cycle_2_total_health_score column"
+        
+      - name: rating_cycle_3_standard_health_survey_date
+        description: "rating_cycle_3_standard_health_survey_date column"
+        
+      - name: rating_cycle_3_total_number_of_health_deficiencies
+        description: "rating_cycle_3_total_number_of_health_deficiencies column"
+        
+      - name: rating_cycle_3_number_of_standard_health_deficiencies
+        description: "rating_cycle_3_number_of_standard_health_deficiencies column"
+        
+      - name: rating_cycle_3_number_of_complaint_health_deficiencies
+        description: "rating_cycle_3_number_of_complaint_health_deficiencies column"
+        
+      - name: rating_cycle_3_health_deficiency_score
+        description: "rating_cycle_3_health_deficiency_score column"
+        
+      - name: rating_cycle_3_number_of_health_revisits
+        description: "rating_cycle_3_number_of_health_revisits column"
+        
+      - name: rating_cycle_3_health_revisit_score
+        description: "rating_cycle_3_health_revisit_score column"
+        
+      - name: rating_cycle_3_total_health_score
+        description: "rating_cycle_3_total_health_score column"
+        
+      - name: total_weighted_health_survey_score
+        description: "total_weighted_health_survey_score column"
+        
+      - name: number_of_facility_reported_incidents
+        description: "number_of_facility_reported_incidents column"
+        
+      - name: number_of_substantiated_complaints
+        description: "number_of_substantiated_complaints column"
+        
+      - name: number_of_citations_from_infection_control_inspections
+        description: "number_of_citations_from_infection_control_inspections column"
+        
+      - name: number_of_fines
+        description: "number_of_fines column"
+        
+      - name: total_amount_of_fines_in_dollars
+        description: "total_amount_of_fines_in_dollars column"
+        
+      - name: number_of_payment_denials
+        description: "number_of_payment_denials column"
+        
+      - name: total_number_of_penalties
+        description: "total_number_of_penalties column"
+        
+      - name: location
+        description: "location column"
+        
+      - name: latitude
+        description: "latitude column"
+        
+      - name: longitude
+        description: "longitude column"
+        
+      - name: geocoding_footnote
+        description: "geocoding_footnote column"
+        
+      - name: processing_date
+        description: "processing_date column"
+        

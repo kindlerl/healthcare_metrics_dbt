@@ -1,0 +1,47 @@
+version: 2
+
+models:
+  - name: KPI_facilities_with_the_lowest_staffing_levels_compared_to_patient_load
+    description: >
+      Assuming MDS_CENSUS is capturing the number of residents
+      MDS = Minimum Data Set
+      Census = number of residents/patients
+
+      HOWEVER, we do NOT have a "body" metric (like nurse_id, staff_roster_id, etc)
+      so we fall back to a standard practice in healthcare analytics
+      when working with staffing data to count HOURS against # of patients
+      to answer the question:
+
+      "How many hours of nurse time did each patient receive on average?"
+
+      This is often called "Nursing Hours Per Resident Per Day" 
+      More formally known as "Hours Per Patient Day"(HPPD)
+
+      But THIS KPI is asking the opposite of that question.  We're looking for 
+      the LOWEST number of nurse hours (staffing level) compared to patient load.
+      This is essentially looking for facilities that are understaffed.
+
+      The Average nursing hourse to patient ratio would be calculates as:
+
+      Sum(TotalNursingHours) / TotalResidents
+
+      Ignore all "_EMP" (employee) and "_CTR" (contract) columns and only use
+      the rollup value to calculate total nurse hours.
+
+      IMPORTANT NOTE:  The KPI requests "by department".  We don't have that data
+      so we will just ignore it.
+     
+    columns:
+      - name: provider_id
+        description: Provider ID of specific provider
+      - name: provider_name
+        description: Provider name
+      - name: state
+        description: 2 character abbreviation for each state represented
+      - name: total_nurse_hours
+        description: Total nurse hours, including employees and contractors
+      - name: total_patient_days
+        description: Total days patients admitted
+      - name: nurse_hours_to_patient_ratio
+        description: Total nurse hours compared to patients
+

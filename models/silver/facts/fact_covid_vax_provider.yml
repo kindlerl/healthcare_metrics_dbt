@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: fact_covid_vax_provider
+    description: Employee vaccination rates per provider
+
+    columns:
+    - name: provider_id
+      description: "CMS certification number (natural key)"
+      tests: [not_null]
+
+    - name: state
+      description: "State of provider"
+      tests: [not_null]
+
+    - name: percent_of_residents_who_are_up_to_date_on_their_vaccines
+      description: "Percent of residents of provider who are up to date on their vaccines"
+
+    - name: percent_of_staff_who_are_up_to_date_on_their_vaccines
+      description: "Percent of staff of provider who are up to date on their vaccines"
+
+    - name: date_vaccination_data_last_updated
+      description: "Date of last vaccine status update"
+      tests: [not_null]

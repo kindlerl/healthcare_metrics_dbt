@@ -1,0 +1,59 @@
+version: 2
+
+models:
+  - name: fact_quality_measure_mds
+    description: Minimum data set quality measurements of provider by quarter
+
+    columns:
+      - name: provider_id
+        description: "CMS Certification Number (natural key)."
+        tests: [not_null]
+
+      - name: measure_code
+        description: "measure_code field (natural key)"
+        tests: [not_null]
+
+      - name: measure_description
+        description: "measure_description field"
+
+      - name: resident_type
+        description: "resident_type field"
+
+      - name: q1_measure_score
+        description: "q1_measure_score field"
+
+      - name: footnote_for_q1_measure_score
+        description: "footnote_for_q1_measure_score field"
+
+      - name: q2_measure_score
+        description: "q2_measure_score field"
+
+      - name: footnote_for_q2_measure_score
+        description: "footnote_for_q2_measure_score field"
+
+      - name: q3_measure_score
+        description: "q3_measure_score field"
+
+      - name: footnote_for_q3_measure_score
+        description: "footnote_for_q3_measure_score field"
+
+      - name: q4_measure_score
+        description: "q4_measure_score field"
+
+      - name: footnote_for_q4_measure_score
+        description: "footnote_for_q4_measure_score field"
+
+      - name: four_quarter_average_score
+        description: "four_quarter_average_score field"
+
+      - name: footnote_for_four_quarter_average_score
+        description: "footnote_for_four_quarter_average_score field"
+
+      - name: used_in_quality_measure_five_star_rating
+        description: "used_in_quality_measure_five_star_rating field"
+
+      - name: measure_period_start_qtr
+        description: "measure_period_start_qtr field"
+
+      - name: measure_period_end_qtr
+        description: "measure_period_end_qtr field"

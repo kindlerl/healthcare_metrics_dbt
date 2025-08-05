@@ -1,0 +1,34 @@
+version: 2
+
+models:
+  - name: KPI_hostpical_occupancy_rate_trends_over_last_year
+    description: >
+      Definition for occupancy rate:
+
+      Occupancy_Rate = (Total_Patients / Total_Beds_Available) * 100
+
+      Total_Patients = mds_census (fact_provider_daily_staffing)
+      Total_Beds_Avaiable = number_of_certified_beds (dim_provider)
+      
+      Computed by hospital, state, and month.
+
+      HOWEVER, based on current data availability, the staffing fact table
+      (fact_provider_daily_staffing) only provides data for a single date
+      (1970-08-23), so we cannot produce any meaningful montyly or quarterly
+      data.  The current output only reflects occupancy for that specific date.
+
+    columns:
+      - name: provider_id
+        description: Provider ID of specific provider
+      - name: provider_name
+        description: Provider name
+      - name: state
+        description: 2 character abbreviation for each state represented
+      - name: month
+        description: Year-month time grouping
+      - name: total_patients
+        description: Total number of patients
+      - name: number_of_certified_beds
+        description: Total number of certified beds in the provider facility
+      - name: occupancy_rate_pct
+        description: Occupancy percentage

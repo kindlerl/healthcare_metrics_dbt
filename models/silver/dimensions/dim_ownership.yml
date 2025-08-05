@@ -1,0 +1,31 @@
+version: 2
+
+models:
+  - name: dim_ownership
+    description: Dimension table capturing ownership and management details for each provider.
+
+    columns:
+      - name: provider_sk
+        description: "Surrogate key generated from provider ID, owner name, and owner role."
+        tests: [not_null, unique]
+
+      - name: provider_id
+        description: "CMS Certification Number (natural key)."
+        tests: [not_null]
+
+      - name: owner_name
+        description: "Name of the owner or management entity."
+        tests: [not_null]
+
+      - name: owner_role
+        description: "Role played by the owner or manager within the facility."
+        tests: [not_null]
+
+      - name: ownership_type
+        description: "Whether the owner is an individual, organization, etc."
+
+      - name: ownership_percentage
+        description: "Percentage ownership, if available."
+
+      - name: owner_start_date
+        description: "Date on which ownership or management role began."

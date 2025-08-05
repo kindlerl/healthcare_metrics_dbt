@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: KPI_patient_to_nurse_ratio
+    description: >
+     
+    columns:
+      - name: provider_id
+        description: Provider ID of specific provider
+      - name: provider_name
+        description: Provider name
+      - name: state
+        description: 2 character abbreviation for each state represented
+      - name: number_of_substantiated_complaints
+        description: Number of substantiated claims, as provided in source data
+      - name: patient_count_on_1970_08_23
+        description: Patient count on 08/23/1970 (only single day's worth of data)
+      - name: complaints_per_100_patients
+        description: Complaints extrapolated to complaints per 100 patients
+

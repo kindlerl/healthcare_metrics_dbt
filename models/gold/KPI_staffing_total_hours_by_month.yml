@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: KPI_total_nurse_hours_by_month
+    description: >
+      Total hours worked by nurses per hospital, state, and month.
+      This includes RN, LPN, CNA, NAT, Med Aide, Admin, and DON roles.
+
+    columns:
+      - name: provider_name
+        description: Name of the provider
+      - name: state
+        description: Two-letter state code
+      - name: month
+        description: Year-Month-level time grouping
+      - name: total_hours_worked
+        description: Sum of all nurse-related hours in the staffing dataset

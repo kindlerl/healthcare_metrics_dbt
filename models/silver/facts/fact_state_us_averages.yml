@@ -1,0 +1,151 @@
+version: 2
+
+models:
+  - name: fact_state_us_averages
+    description: Deficiency averages by state
+
+    columns:
+    - name: state_or_nation
+      description: "2 character state abbreviation or NATION, (natural key)"
+      tests: [not_null, unique]
+
+    - name: state_or_nation
+      description: "2 character state abbreviation or NATION"
+
+    - name: cycle_1_total_number_of_health_deficiencies
+      description: "cycle_1_total_number_of_health_deficiencies field"
+
+    - name: cycle_1_total_number_of_fire_safety_deficiencies
+      description: "cycle_1_total_number_of_fire_safety_deficiencies field"
+
+    - name: cycle_2_total_number_of_health_deficiencies
+      description: "cycle_2_total_number_of_health_deficiencies field"
+
+    - name: cycle_2_total_number_of_fire_safety_deficiencies
+      description: "cycle_2_total_number_of_fire_safety_deficiencies field"
+
+    - name: cycle_3_total_number_of_health_deficiencies
+      description: "cycle_3_total_number_of_health_deficiencies field"
+
+    - name: cycle_3_total_number_of_fire_safety_deficiencies
+      description: "cycle_3_total_number_of_fire_safety_deficiencies field"
+
+    - name: average_number_of_residents_per_day
+      description: "average_number_of_residents_per_day field"
+
+    - name: reported_nurse_aide_staffing_hours_per_resident_per_day
+      description: "reported_nurse_aide_staffing_hours_per_resident_per_day field"
+
+    - name: reported_lpn_staffing_hours_per_resident_per_day
+      description: "reported_lpn_staffing_hours_per_resident_per_day field"
+
+    - name: reported_rn_staffing_hours_per_resident_per_day
+      description: "reported_rn_staffing_hours_per_resident_per_day field"
+
+    - name: reported_licensed_staffing_hours_per_resident_per_day
+      description: "reported_licensed_staffing_hours_per_resident_per_day field"
+
+    - name: reported_total_nurse_staffing_hours_per_resident_per_day
+      description: "reported_total_nurse_staffing_hours_per_resident_per_day field"
+
+    - name: total_number_of_nurse_staff_hours_per_resident_per_day_on_the_weekend
+      description: "total_number_of_nurse_staff_hours_per_resident_per_day_on_the_weekend field"
+
+    - name: registered_nurse_hours_per_resident_per_day_on_the_weekend
+      description: "registered_nurse_hours_per_resident_per_day_on_the_weekend field"
+
+    - name: reported_physical_therapist_staffing_hours_per_resident_per_day
+      description: "reported_physical_therapist_staffing_hours_per_resident_per_day field"
+
+    - name: total_nursing_staff_turnover
+      description: "total_nursing_staff_turnover field"
+
+    - name: registered_nurse_turnover
+      description: "registered_nurse_turnover field"
+
+    - name: number_of_administrators_who_have_left_the_nursing_home
+      description: "number_of_administrators_who_have_left_the_nursing_home field"
+
+    - name: nursing_case_mix_index
+      description: "nursing_case_mix_index field"
+
+    - name: case_mix_rn_staffing_hours_per_resident_per_day
+      description: "case_mix_rn_staffing_hours_per_resident_per_day field"
+
+    - name: case_mix_total_nurse_staffing_hours_per_resident_per_day
+      description: "case_mix_total_nurse_staffing_hours_per_resident_per_day field"
+
+    - name: case_mix_weekend_total_nurse_staffing_hours_per_resident_per_day
+      description: "case_mix_weekend_total_nurse_staffing_hours_per_resident_per_day field"
+
+    - name: number_of_fines
+      description: "number_of_fines field"
+
+    - name: fine_amount_in_dollars
+      description: "fine_amount_in_dollars field"
+
+    - name: percentage_of_long_stay_residents_whose_need_for_help_with_daily_activities_has_increased
+      description: "percentage_of_long_stay_residents_whose_need_for_help_with_daily_activities_has_increased field"
+
+    - name: percentage_of_long_stay_residents_who_lose_too_much_weight
+      description: "percentage_of_long_stay_residents_who_lose_too_much_weight field"
+
+    - name: percentage_of_low_risk_long_stay_residents_who_lose_control_of_their_bowels_or_bladder
+      description: "percentage_of_low_risk_long_stay_residents_who_lose_control_of_their_bowels_or_bladder field"
+
+    - name: percentage_of_long_stay_residents_with_a_catheter_inserted_and_left_in_their_bladder
+      description: "percentage_of_long_stay_residents_with_a_catheter_inserted_and_left_in_their_bladder field"
+
+    - name: percentage_of_long_stay_residents_with_a_urinary_tract_infection
+      description: "percentage_of_long_stay_residents_with_a_urinary_tract_infection field"
+
+    - name: percentage_of_long_stay_residents_who_have_depressive_symptoms
+      description: "percentage_of_long_stay_residents_who_have_depressive_symptoms field"
+
+    - name: percentage_of_long_stay_residents_who_were_physically_restrained
+      description: "percentage_of_long_stay_residents_who_were_physically_restrained field"
+
+    - name: percentage_of_long_stay_residents_experiencing_one_or_more_falls_with_major_injury
+      description: "percentage_of_long_stay_residents_experiencing_one_or_more_falls_with_major_injury field"
+
+    - name: percentage_of_long_stay_residents_assessed_and_appropriately_given_the_pneumococcal_vaccine
+      description: "percentage_of_long_stay_residents_assessed_and_appropriately_given_the_pneumococcal_vaccine field"
+
+    - name: percentage_of_long_stay_residents_who_received_an_antipsychotic_medication
+      description: "percentage_of_long_stay_residents_who_received_an_antipsychotic_medication field"
+
+    - name: percentage_of_short_stay_residents_assessed_and_appropriately_given_the_pneumococcal_vaccine
+      description: "percentage_of_short_stay_residents_assessed_and_appropriately_given_the_pneumococcal_vaccine field"
+
+    - name: percentage_of_short_stay_residents_who_newly_received_an_antipsychotic_medication
+      description: "percentage_of_short_stay_residents_who_newly_received_an_antipsychotic_medication field"
+
+    - name: percentage_of_long_stay_residents_whose_ability_to_move_independently_worsened
+      description: "percentage_of_long_stay_residents_whose_ability_to_move_independently_worsened field"
+
+    - name: percentage_of_long_stay_residents_who_received_an_antianxiety_or_hypnotic_medication
+      description: "percentage_of_long_stay_residents_who_received_an_antianxiety_or_hypnotic_medication field"
+
+    - name: percentage_of_high_risk_long_stay_residents_with_pressure_ulcers
+      description: "percentage_of_high_risk_long_stay_residents_with_pressure_ulcers field"
+
+    - name: percentage_of_long_stay_residents_assessed_and_appropriately_given_the_seasonal_influenza_vaccine
+      description: "percentage_of_long_stay_residents_assessed_and_appropriately_given_the_seasonal_influenza_vaccine field"
+
+    - name: percentage_of_short_stay_residents_who_made_improvements_in_function
+      description: "percentage_of_short_stay_residents_who_made_improvements_in_function field"
+
+    - name: percentage_of_short_stay_residents_who_were_assessed_and_appropriately_given_the_seasonal_influenza_vaccine
+      description: "percentage_of_short_stay_residents_who_were_assessed_and_appropriately_given_the_seasonal_influenza_vaccine field"
+
+    - name: percentage_of_short_stay_residents_who_were_rehospitalized_after_a_nursing_home_admission
+      description: "percentage_of_short_stay_residents_who_were_rehospitalized_after_a_nursing_home_admission field"
+
+    - name: percentage_of_short_stay_residents_who_had_an_outpatient_emergency_department_visit
+      description: "percentage_of_short_stay_residents_who_had_an_outpatient_emergency_department_visit field"
+
+    - name: number_of_hospitalizations_per_1000_long_stay_resident_days
+      description: "number_of_hospitalizations_per_1000_long_stay_resident_days field"
+
+    - name: number_of_outpatient_emergency_department_visits_per_1000_long_stay_resident_days
+      description: "number_of_outpatient_emergency_department_visits_per_1000_long_stay_resident_days field"

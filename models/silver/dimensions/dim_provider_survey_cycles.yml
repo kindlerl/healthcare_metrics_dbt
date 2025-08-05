@@ -1,0 +1,86 @@
+version: 2
+
+models:
+  - name: dim_provider_survey_cycles
+    description: "Refined provider dimension showing staffing hours per resident, per day."
+
+    columns:
+
+      - name: provider_sk
+        description: "Surrogate key for joining fact tables."
+        tests: [not_null unique]
+      
+      - name: rating_cycle_1_standard_survey_health_date
+        description: "Cycle 1 rating, standard survey health date"
+
+      - name: rating_cycle_1_total_number_of_health_deficiencies
+        description: "Cycle 1 rating, total number of health deficiencies"
+
+      - name: rating_cycle_1_number_of_standard_health_deficiencies
+        description: "Cycle 1 rating, number of standard health deficiencies"
+
+      - name: rating_cycle_1_number_of_complaint_health_deficiencies
+        description: "Cycle 1 rating, number of complaint health deficiencies"
+
+      - name: rating_cycle_1_health_deficiency_score
+        description: "Cycle 1 rating, health deficiency score"
+
+      - name: rating_cycle_1_number_of_health_revisits
+        description: "Cycle 1 rating, number of health revisits"
+
+      - name: rating_cycle_1_health_revisit_score
+        description: "Cycle 1 rating, health revisit score"
+
+      - name: rating_cycle_1_total_health_score
+        description: "Cycle 1 rating, total health score"
+
+      - name: rating_cycle_2_standard_health_survey_date
+        description: "Cycle 2 rating, standard survey health date"
+
+      - name: rating_cycle_2_total_number_of_health_deficiencies
+        description: "Cycle 2 rating, total number of health deficiencies"
+
+      - name: rating_cycle_2_number_of_standard_health_deficiencies
+        description: "Cycle 2 rating, number of standard health deficiencies"
+
+      - name: rating_cycle_2_number_of_complaint_health_deficiencies
+        description: Cycle 2 rating, number of complaint health deficiencies"
+
+      - name: rating_cycle_2_health_deficiency_score
+        description: "Cycle 2 rating, health deficiency score"
+
+      - name: rating_cycle_2_number_of_health_revisits
+        description: Cycle 2 rating, "number of health revisits"
+
+      - name: rating_cycle_2_health_revisit_score
+        description: "Cycle 2 rating, health revisit score"
+
+      - name: rating_cycle_2_total_health_score
+        description: "Cycle 2 rating, total health score"
+
+      - name: rating_cycle_3_standard_health_survey_date
+        description: "Cycle 3 rating, standard survey health date"
+
+      - name: rating_cycle_3_total_number_of_health_deficiencies
+        description: "Cycle 3 rating, total number of health deficiencies"
+
+      - name: rating_cycle_3_number_of_standard_health_deficiencies
+        description: "Cycle 3 rating, number of standard health deficiencies"
+
+      - name: rating_cycle_3_number_of_complaint_health_deficiencies
+        description: "Cycle 3 rating, number of complaint health deficiencies"
+
+      - name: rating_cycle_3_health_deficiency_score
+        description: "Cycle 3 rating, health deficiency score"
+
+      - name: rating_cycle_3_number_of_health_revisits
+        description: "Cycle 3 rating, number of health revisits"
+
+      - name: rating_cycle_3_health_revisit_score
+        description: "Cycle 3 rating, health revisit score"
+
+      - name: rating_cycle_3_total_health_score
+        description: "Cycle 3 rating, total health score"
+
+      - name: total_weighted_health_survey_score
+        description: "Total weighted health survey scrore"

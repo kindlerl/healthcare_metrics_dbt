@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: KPI_readmission_rates_within_30_days
+    description: >
+      To be able to accurately calculate this KPI, we would need:
+
+      Patient-level readmission events ❌
+      Admission and discharge dates ❌
+      Diagnosis category ❌
+      Time-series data (minimum 30 day window) ❌
+      Readmission indicators ❌
+
+      Since we do not have any of the required metrics, we cannot complete the KPI
+      as requested.
+
+      HOWEVER, as an alternative (proxy), we can provide information that has already
+      been pre-aggregated and standardized.  There are 2 tables that capture 
+      readmission rates as a general metric:
+
+          • fact_snf_vbp_facility_performance
+          • dim_snf_vbp_aggregate_performance_metrics
+
+      Pull the relative columns from these tables 
+
+    columns:
+      - name: provider_id
+        description: Provider ID of specific provider
+      - name: provider_name
+        description: Provider name
+      - name: state
+        description: 2 character abbreviation for each state represented
+      - name: baseline_readmission_rate
+        description: Aggregated baseline readmission rate, provided as source data
+      - name: performance_readmission_rate
+        description: Aggregated performance readmission rate, provided as source data
+

@@ -1,0 +1,27 @@
+version: 2
+
+models:
+  - name: dim_data_collection_intervals
+    description: "Measured data collection intervals"
+    
+    columns:
+      - name: measure_code
+        description: “measure_code field"
+        tests: [unique, not_null]
+
+      - name: measure_description
+        description: “measure_description field"
+
+      - name: data_collection_period_from_date
+        description: “data_collection_period_from_date field"
+
+      - name: data_collection_period_through_date
+        description: “data_collection_period_through_date field"
+
+      - name: measure_date_range
+        description: “measure_date_range field"
+
+
+
+
+

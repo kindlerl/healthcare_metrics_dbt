@@ -1,0 +1,117 @@
+version: 2
+
+models:
+  - name: fact_survey_summary
+    description: Deficiency citation history, including inspection cycle and corrections
+
+    columns:
+    - name: survey_summary__sk
+      description: "Surrogate key generated from provider_id, inspection_cycle"
+      tests: [not_null, unique]
+
+    - name: provider_id
+      description: "CMS certification number (natural key)"
+      tests: [not_null]
+
+    - name: inspection_cycle
+      description: "inspection_cycle field"
+      tests: 
+        - not_null
+        - accepted_values:
+            values: ['1', '2', '3']               
+
+    - name: health_survey_date
+      description: "health_survey_date field"
+
+    - name: fire_safety_survey_date
+      description: "fire_safety_survey_date field"
+
+    - name: total_number_of_health_deficiencies
+      description: "total_number_of_health_deficiencies field"
+
+    - name: total_number_of_fire_safety_deficiencies
+      description: "total_number_of_fire_safety_deficiencies field"
+
+    - name: count_of_freedom_from_abuse_and_neglect_and_exploitation_deficiencies
+      description: "count_of_freedom_from_abuse_and_neglect_and_exploitation_deficiencies field"
+
+    - name: count_of_quality_of_life_and_care_deficiencies
+      description: "count_of_quality_of_life_and_care_deficiencies field"
+
+    - name: count_of_resident_assessment_and_care_planning_deficiencies
+      description: "count_of_resident_assessment_and_care_planning_deficiencies field"
+
+    - name: count_of_nursing_and_physician_services_deficiencies
+      description: "count_of_nursing_and_physician_services_deficiencies field"
+
+    - name: count_of_resident_rights_deficiencies
+      description: "count_of_resident_rights_deficiencies field"
+
+    - name: count_of_nutrition_and_dietary_deficiencies
+      description: "count_of_nutrition_and_dietary_deficiencies field"
+
+    - name: count_of_pharmacy_service_deficiencies
+      description: "count_of_pharmacy_service_deficiencies field"
+
+    - name: count_of_environmental_deficiencies
+      description: "count_of_environmental_deficiencies field"
+
+    - name: count_of_administration_deficiencies
+      description: "count_of_administration_deficiencies field"
+
+    - name: count_of_infection_control_deficiencies
+      description: "count_of_infection_control_deficiencies field"
+
+    - name: count_of_emergency_preparedness_deficiencies
+      description: "count_of_emergency_preparedness_deficiencies field"
+
+    - name: count_of_automatic_sprinkler_systems_deficiencies
+      description: "count_of_automatic_sprinkler_systems_deficiencies field"
+
+    - name: count_of_construction_deficiencies
+      description: "count_of_construction_deficiencies field"
+
+    - name: count_of_services_deficiencies
+      description: "count_of_services_deficiencies field"
+
+    - name: count_of_corridor_walls_and_doors_deficiencies
+      description: "count_of_corridor_walls_and_doors_deficiencies field"
+
+    - name: count_of_egress_deficiencies
+      description: "count_of_egress_deficiencies field"
+
+    - name: count_of_electrical_deficiencies
+      description: "count_of_electrical_deficiencies field"
+
+    - name: count_of_emergency_plans_and_fire_drills_deficiencies
+      description: "count_of_emergency_plans_and_fire_drills_deficiencies field"
+
+    - name: count_of_fire_alarm_systems_deficiencies
+      description: "count_of_fire_alarm_systems_deficiencies field"
+
+    - name: count_of_smoke_deficiencies
+      description: "count_of_smoke_deficiencies field"
+
+    - name: count_of_interior_deficiencies
+      description: "count_of_interior_deficiencies field"
+
+    - name: count_of_gas_and_vacuum_and_electrical_systems_deficiencies
+      description: "count_of_gas_and_vacuum_and_electrical_systems_deficiencies field"
+
+    - name: count_of_hazardous_area_deficiencies
+      description: "count_of_hazardous_area_deficiencies field"
+
+    - name: count_of_illumination_and_emergency_power_deficiencies
+      description: "count_of_illumination_and_emergency_power_deficiencies field"
+
+    - name: count_of_laboratories_deficiencies
+      description: "count_of_laboratories_deficiencies field"
+
+    - name: count_of_medical_gases_and_anaesthetizing_areas_deficiencies
+      description: "count_of_medical_gases_and_anaesthetizing_areas_deficiencies field"
+
+    - name: count_of_smoking_regulations_deficiencies
+      description: "count_of_smoking_regulations_deficiencies field"
+
+    - name: count_of_miscellaneous_deficiencies
+      description: "count_of_miscellaneous_deficiencies field"

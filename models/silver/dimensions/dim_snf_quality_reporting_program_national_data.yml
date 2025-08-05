@@ -1,0 +1,32 @@
+version: 2
+
+models:
+  - name: dim_snf_quality_reporting_program_national_data
+    description: "National quality reporting data by measure code"
+    
+    columns:
+      - name: snf_measure_code_sk
+        description: "Surrogate key for provider_id, measure code"
+        tests: [unique, not_null]
+
+      - name: provider_id
+        description: “Provider id"
+        tests: [not_null]
+
+      - name: measure_code
+        description: “Measure code"
+
+      - name: score
+        description: “Score"
+
+      - name: footnote
+        description: Footnote"
+
+      - name: start_date
+        description: “Start date"
+
+      - name: end_date
+        description: “End date"
+
+      - name: measure_date_range
+        description: “Measure date range"

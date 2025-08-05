@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: KPI_ratio_of_permanent_to_contract_staff
+    description: >
+      While we do not have the adequate metrics to calculate employment start/stop
+      dates for both employees and contractors, we do have an hours breakdown of
+      each for a single day (1970-08-23). We can use the hours breakdown of each
+      nurse type (employee, contractor) to proxy a relationship.
+
+    columns:
+      - name: provider_id
+        description: Provider ID of specific provider
+      - name: provider_name
+        description: Provider name
+      - name: state
+        description: 2 character abbreviation for each state represented
+      - name: total_employee_hours
+        description: Total employee hours only
+      - name: total_contractor_hours
+        description: Total contractor hours only
+      - name: perm_to_contract_ratio
+        description: Percentage of permanent to contractor employees
+
