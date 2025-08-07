@@ -24,11 +24,18 @@ models:
         description: Provider name
       - name: state
         description: 2 character abbreviation for each state represented
-      - name: month
-        description: Year-month time grouping
+      - name: month_start_date,
+        description: Start day of year-month time grouping
+      - name: quarter_label
+        description: Quarter label, for visualization (e.g. 2024 Q2)
+      - name: days_in_month
+        description: Number of days in the month of the month_start_date
+      - name: days_in_quarter
+        description: Number of days in the quarter in which the month_start_date resides
       - name: total_patients
         description: Total number of patients
       - name: number_of_certified_beds
         description: Total number of certified beds in the provider facility
       - name: occupancy_rate_pct
         description: Occupancy percentage
+

@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: KPI_30_day_readmission_rate_by_diagnosis
+    description: >
+      KPI: 30-Day Readmission Rates by Diagnosis
+
+      This KPI pulls 4 specific aggregated metrics from our data set
+      to satisfy the request.  These metrics represent the most recent 
+      available value as reported by CMS. Time periods may vary by 
+      measure source.
+
+    columns:
+      - name: METRIC_NAME
+        description: Aggregated metric description
+        tests: [not_null, unique]
+      - name: METRIC_SOURCE
+        description: Source from which metric was originated
+      - name: AVG_SCORE
+        description: Aggregated score (provided in original metric)
+        tests: [not_null]
+      - name: LAST_UPDATED
+        description: Date this table was last updated.
